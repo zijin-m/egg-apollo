@@ -20,43 +20,50 @@
 [download-image]: https://img.shields.io/npm/dm/egg-apollo.svg?style=flat-square
 [download-url]: https://npmjs.org/package/egg-apollo
 
-<!--
-Description here.
--->
+## 使用场景
 
-## Install
+用于接入 apollo 配置中心，基于[ctrip-apollo](https://github.com/kaelzhang/ctrip-apollo)扩展，默认可以通过像获取 egg 配置一样的调用方式直接获取 apollo 配置，也可以通过`app.apollo`来获取 apollo 实例，自行调用 api 获取配置。详见后续说明。
 
-```bash
-$ npm i egg-apollo --save
-```
+## 依赖说明
 
-## Usage
+### 依赖的 egg 版本
+
+| egg-apollo 版本 | egg 1.x |
+| --------------- | ------- |
+| 1.x             | 😁      |
+| 0.x             | ❌      |
+
+## 开启插件
 
 ```js
-// {app_root}/config/plugin.js
-exports.@zijin/eggApollo = {
+// config/plugin.js
+exports.apollo = {
   enable: true,
-  package: 'egg-apollo',
+  package: '@zijin/egg-apollo'
 };
 ```
 
-## Configuration
+## 详细配置
 
-```js
-// {app_root}/config/config.default.js
-exports.@zijin/eggApollo = {
-};
+```
+  host: '', // 配置中心地址
+  appId: '', // appId
+  cluster: 'default', // 默认集群
+  namespaces: [ 'application' ], // 默认命名空间
+  cachePath: '/tmp/apollo_cache', // 默认缓存目录
+  enableUpdateNotification: true, // 默认开启推送更新
+  enableFetch: true, // 默认开启定时拉取
+  fetchInterval: 5 * 60 * 1000, // 定时拉取间隔
+  retry: 10, // 初始化重试次数
+  mergeNamespace: '', // 将特定namespace合入本地配置，默认不做
+  mountConfig: true, // 将namespaces挂载到本地配置，默认开启
 ```
 
-see [config/config.default.js](config/config.default.js) for more detail.
+请到 [config/config.default.js](config/config.default.js) 查看详细配置项说明。
 
-## Example
+## 提问交流
 
-<!-- example here -->
-
-## Questions & Suggestions
-
-Please open an issue [here](https://github.com/eggjs/egg/issues).
+请到 [egg issues](https://github.com/eggjs/egg/issues) 异步交流。
 
 ## License
 

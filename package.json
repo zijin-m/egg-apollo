@@ -1,16 +1,21 @@
 {
   "name": "@zijin/egg-apollo",
   "version": "1.0.0",
-  "description": "apollo plugin for egg",
+  "description": "apollo plugin for egg base on ctrip-apollo",
   "eggPlugin": {
-    "name": "@zijin/eggApollo"
+    "name": "apollo"
   },
   "keywords": [
     "egg",
     "eggPlugin",
     "egg-plugin"
   ],
-  "dependencies": {},
+  "dependencies": {
+    "ctrip-apollo": "^4.4.2",
+    "properties": "^1.2.1",
+    "ramda": "^0.26.1",
+    "wait-sync": "^1.0.1"
+  },
   "devDependencies": {
     "autod": "^3.0.1",
     "autod-egg": "^1.1.0",
@@ -37,6 +42,7 @@
     "app.js",
     "agent.js",
     "config",
+    "lib",
     "app"
   ],
   "ci": {
