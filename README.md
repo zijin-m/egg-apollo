@@ -55,8 +55,8 @@ exports.apollo = {
   enableFetch: true, // 默认开启定时拉取
   fetchInterval: 5 * 60 * 1000, // 定时拉取间隔
   retry: 10, // 初始化重试次数
-  mergeNamespace: '', // 将特定namespace合入本地配置，默认不做
-  mountConfig: true, // 将namespaces挂载到本地配置，默认开启
+  mergeNamespace: '', // 将特定namespace合入本地配置 默认不做
+  mountConfig: true, // 将namespaces挂载到本地配置 默认开启
 ```
 
 请到 [config/config.default.js](config/config.default.js) 查看详细配置项说明。
