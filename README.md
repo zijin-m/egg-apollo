@@ -61,6 +61,44 @@ exports.apollo = {
 
 请到 [config/config.default.js](config/config.default.js) 查看详细配置项说明。
 
+## 使用参考
+
+当`apollo`的某个`appId`下的`application`命名空间配置如下时
+
+| key    | value            |
+| ------ | ---------------- |
+| name   | apollo           |
+| config | {"key": "value"} |
+| a.b    | 1                |
+| a.c.d  | 2                |
+
+通过`app.conig`直接获取配置信息。
+
+```js
+console.log(app.config.application);
+// {
+//   name: "apollo",
+//   config: {
+//     key: "value"
+//   },
+//   a: {
+//     b: 1,
+//     c: {
+//       d: 2
+//     }
+//   }
+// }
+```
+
+通过这种方式获得配置数据会默认进行 key 的对象合并和 value 的 JSON 格式化，所以推荐使用这种方式,具体的合并方式可以参考[properties]("https://github.com/gagle/node-properties#namespaces")对 namespaces 合并的规则，但是一般来说不推荐使用 key 合并，而是直接把 value 设置为 JSON 对象更好。
+
+第二种是直接通过`app.apollo`获取，这种获取方式拿到的配置不会对数据进行任何处理，所以得到的是原始字符串。
+
+```js
+app.apollo.namespace().config(); // 获取默认namespace下的全部配置
+app.apollo.namespace().get(key); // 获取默认namespace下的某个配置
+```
+
 ## 提问交流
 
 请到 [egg issues](https://github.com/eggjs/egg/issues) 异步交流。
