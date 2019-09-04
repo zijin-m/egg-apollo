@@ -96,7 +96,7 @@ console.log(app.config.application);
 // }
 ```
 
-通过这种方式获得配置数据会默认进行 key 的对象合并和 value 的 JSON 格式化，所以推荐使用这种方式,具体的合并方式可以参考[properties]("https://github.com/gagle/node-properties#namespaces")对 namespaces 合并的规则，但是一般来说不推荐使用 key 合并，而是直接把 value 设置为 JSON 对象更好。
+通过这种方式获得配置数据会默认进行 key 的对象合并和 value 的 JSON 格式化，所以推荐使用这种方式,具体的合并方式可以参考[properties](https://github.com/gagle/node-properties#namespaces)对 namespaces 合并的规则，但是一般来说不推荐使用 key 合并，而是直接把 value 设置为 JSON 对象更好。
 
 第二种是直接通过`app.apollo`获取，这种获取方式拿到的配置不会对数据进行任何处理，所以得到的是原始字符串。
 
