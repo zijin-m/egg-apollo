@@ -27,7 +27,7 @@
 ## 安装
 
 ```
-npm i @zijin/egg-apollo
+npm i @zijin-m/egg-apollo
 ```
 
 ## 依赖说明
@@ -45,7 +45,7 @@ npm i @zijin/egg-apollo
 // config/plugin.js
 exports.apollo = {
   enable: true,
-  package: '@zijin/egg-apollo'
+  package: '@zijin-m/egg-apollo'
 };
 ```
 
