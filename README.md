@@ -24,6 +24,12 @@
 
 用于接入 apollo 配置中心，基于[ctrip-apollo](https://github.com/kaelzhang/ctrip-apollo)扩展，默认可以通过像获取 egg 配置一样的调用方式直接获取 apollo 配置，也可以通过`app.apollo`来获取 apollo 实例，自行调用 api 获取配置。详见后续说明。
 
+## 安装
+
+```
+npm i @zijin/egg-apollo
+```
+
 ## 依赖说明
 
 ### 依赖的 egg 版本
