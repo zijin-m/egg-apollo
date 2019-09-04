@@ -1,5 +1,5 @@
 {
-  "name": "@zijin/egg-apollo",
+  "name": "@zijin-m/egg-apollo",
   "version": "1.0.0",
   "description": "apollo plugin for egg base on ctrip-apollo",
   "eggPlugin": {
@@ -50,12 +50,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/eggjs/egg-apollo.git"
+    "url": "git+https://github.com/zijin-m/egg-apollo.git"
   },
   "bugs": {
     "url": "https://github.com/eggjs/egg/issues"
   },
-  "homepage": "https://github.com/eggjs/egg-apollo#readme",
+  "homepage": "https://github.com/zijin-m/egg-apollo#readme",
   "author": "zijin",
   "license": "MIT"
 }
