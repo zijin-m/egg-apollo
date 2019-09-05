@@ -22,7 +22,7 @@
 
 ## 使用场景
 
-用于接入 apollo 配置中心，基于[ctrip-apollo](https://github.com/kaelzhang/ctrip-apollo)扩展，默认可以通过像获取 egg 配置一样的调用方式直接获取 apollo 配置，也可以通过`app.apollo`来获取 apollo 实例，自行调用 api 获取配置。详见后续说明。
+用于接入 apollo 配置中心，基于[ctrip-apollo](https://github.com/kaelzhang/ctrip-apollo)扩展，默认可以通过像获取 egg 配置一样的调用方式直接获取 apollo 配置，也可以通过`app.apollo`来获取 apollo 实例，自行调用 api 获取配置。使用配置获取在默认配置的情况下都是热更新的。详见后续说明。
 
 ## 安装
 
@@ -104,6 +104,22 @@ console.log(app.config.application);
 app.apollo.namespace().config(); // 获取默认namespace下的全部配置
 app.apollo.namespace().get(key); // 获取默认namespace下的某个配置
 ```
+
+## 关于热更新
+
+对于以上两种获取配置的方式，在启用`enableUpdateNotification: true`后可以获得近实时更新配置，或者启用`enableFetch: true`(`fetchInterval`)后，在`fetchInterval`周期后更新配置。
+
+## 配置说明
+
+常见配置可以参考[ctrip-apollo](https://github.com/kaelzhang/ctrip-apollo)
+
+`mountConfig`配置 默认开启
+
+开启后会将`namespaces`挂载到`config`下，比如配置`namespaces: [ 'application','otherNameSpace' ]`的时候你可以通过`app.config.application`,`app.config.otherNameSpace`获取 apollo 配置。
+
+`mergeNamespace`配置
+
+如果你希望将特定`namespace`的配置合并到`config`中，可以设置`mergeNamespace`，如`mergeNamespace: 'application'`，常见的使用场景是在 egg 启动前更改配置，如将启动的配置放在 apollo 配置中心，否则使用`mountConfig`进行配置挂载就能满足日常需求。
 
 ## 提问交流
 

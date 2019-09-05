@@ -1,6 +1,6 @@
 {
   "name": "@zijin-m/egg-apollo",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "apollo plugin for egg base on ctrip-apollo",
   "eggPlugin": {
     "name": "apollo"
