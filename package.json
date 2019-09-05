@@ -1,6 +1,6 @@
 {
   "name": "@zijin-m/egg-apollo",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "apollo plugin for egg base on ctrip-apollo",
   "eggPlugin": {
     "name": "apollo"
@@ -39,11 +39,10 @@
     "autod": "autod"
   },
   "files": [
-    "app.js",
-    "agent.js",
     "config",
+    "app.js",
     "lib",
-    "app"
+    "index.d.ts"
   ],
   "ci": {
     "version": "8, 10"

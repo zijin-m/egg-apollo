@@ -1,6 +1,5 @@
-'use strict';
-
 const mock = require('egg-mock');
+const assert = require('assert');
 
 describe('test/apollo.test.js', () => {
   let app;
@@ -15,9 +14,12 @@ describe('test/apollo.test.js', () => {
   afterEach(mock.restore);
 
   it('should GET /', () => {
-    return app.httpRequest()
+    assert(app.config.application.greeting === 'apollo');
+    assert(app.config.greeting === 'apollo');
+    return app
+      .httpRequest()
       .get('/')
-      .expect('hi, @zijin/eggApollo')
+      .expect('hi, apollo')
       .expect(200);
   });
 });
