@@ -44,7 +44,7 @@ declare module 'egg' {
   // 扩展你的配置
   interface EggAppConfig {
     /**
-     * Apollo配置
+     * Apollo命名空间application配置
      */
     application?: any;
     apollo: {
